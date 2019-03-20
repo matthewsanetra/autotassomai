@@ -21,17 +21,14 @@
         for (var correct_answer of answers) {
             var answers_parent = document.querySelector('#quiz-pane > div > div > div > quiz-new > div > div > div.quiz-pane__question.ng-star-inserted > div.quiz-pane__answer-box > div.quiz-pane__body > div');
             for (var child of answers_parent.children) {
-
-                var is_mathjax = false;
-                var mathjax = "";
+                
                 for (var _child of child.children) {
                     if (_child.nodeName == "SCRIPT") {
                         location.reload();
                     }
                 }
 
-
-                var current_answer = (is_mathjax ? mathjax : child.children[0].innerText);
+                var current_answer = child.children[0].innerText;
                 if (current_answer == correct_answer) {
                     child.children[0].click();
                     await sleep(3000);
