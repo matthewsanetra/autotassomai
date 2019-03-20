@@ -8,4 +8,6 @@ _In the event that anyone modifies this to work, I am not liable for any damages
 When they request a quiz from their `/quiz/` endpoint, in the array of questions, answer0 was always the correct one.<br>
 They scrambled the choices client-side... _\*Sigh\*_
 
-This script intercepted their AJAX request by hooking the javascript function and passing the JSON to a function that finds the correct answer in the HTML and clicks it. It skips questions that use MathJAX by simply reloading.
+This script intercepted their AJAX request by hooking the javascript function (with [xhook](https://github.com/jpillora/xhook)) and passing the JSON to a function that finds the correct answer in the HTML and clicks it. It skips questions that use MathJAX by simply reloading.
+
+Sorry for the spaghetti code as I haven't used JavaScript in a long time and I only had to since I couldn't get a proxy working to use Selenium Webdriver.
